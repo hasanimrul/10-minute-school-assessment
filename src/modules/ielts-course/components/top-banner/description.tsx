@@ -8,7 +8,7 @@ export default function Description({
 }) {
   const starStyle = "text-yellow-500";
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <div className="flex items-center gap-1">
         <FaStar className={starStyle} />
         <FaStar className={starStyle} />
@@ -20,7 +20,7 @@ export default function Description({
         </p>
       </div>
       <div
-        className="text-gray-400"
+        className="text-[#A3A3A3] text-base"
         dangerouslySetInnerHTML={{ __html: courseData?.description ?? "" }}
       />
     </div>
