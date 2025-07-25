@@ -62,7 +62,7 @@ export default function TrailerVideoSlider({
         <FaCircleChevronRight className="text-white text-2xl" />
       </button>
       {/* thumbnails */}
-      <div className="flex justify-center gap-1 mt-2 overflow-x-auto">
+      <div className="flex justify-center gap-1 mt-2 overflow-x-auto no-scrollbar">
         {mediaList.map((item, idx) => (
           <button
             key={idx}
