@@ -1,4 +1,6 @@
 import { CourseData } from "../../types/ielts-course-data-types";
+import CourseTrailerAndChecklist from "./course-trailer-and-checklist";
+import TrailerCard from "./course-trailer-and-checklist";
 import Description from "./description";
 import Title from "./title";
 
@@ -20,7 +22,9 @@ export default function TopBanner({
           <Title courseData={courseData} />
           <Description courseData={courseData} />
         </div>
-        <div className="w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-[50px] md:absolute"></div>
+        <div className="w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-2 md:top-[50px] md:absolute">
+          <CourseTrailerAndChecklist courseData={courseData} />
+        </div>
       </div>
     </div>
   );
