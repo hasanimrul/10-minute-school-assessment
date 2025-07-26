@@ -11,7 +11,7 @@ export interface CourseData {
   slug: string;
   id: number;
   title: string;
-  description: string | TrustedHTML | undefined;
+  description: string;
   platform: string;
   type: string;
   modality: string;
@@ -61,8 +61,20 @@ export interface Section {
   description: string;
   bg_color: string;
   order_idx: number;
-  values: any[];
+  values: SectionValue[];
 }
+
+// Union type for all possible section values
+export type SectionValue =
+  | Offer
+  | Instructor
+  | Feature
+  | GroupJoinEngagement
+  | Pointer
+  | About
+  | FeatureExplanation
+  | Testimonial
+  | Faq;
 
 export interface Offer {
   background_color: string;
@@ -143,4 +155,10 @@ export interface Testimonial {
   thumb: string;
   video_type: string;
   video_url: string;
+}
+
+export interface Faq {
+  answer: string;
+  id: string;
+  question: string;
 }
