@@ -27,7 +27,7 @@ export default function TrailerVideoSlider({
   const media = mediaList[currentIndex];
 
   return (
-    <div className="relative w-[400px] h-[220px]">
+    <div className="relative w-[400px]">
       <button
         onClick={goToPrev}
         className="absolute left-1 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer"

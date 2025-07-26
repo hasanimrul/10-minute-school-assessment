@@ -20,7 +20,7 @@ export default function Description({
         </p>
       </div>
       <div
-        className="text-[#A3A3A3] text-base"
+        className="text-[#A3A3A3] text-base "
         dangerouslySetInnerHTML={{ __html: courseData?.description ?? "" }}
       />
     </div>
