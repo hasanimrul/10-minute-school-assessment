@@ -1,10 +1,8 @@
-import { FaPhone } from "react-icons/fa";
 import { CourseData } from "../../types/ielts-course-data-types";
 import CourseTrailerAndChecklist from "./course-trailer-and-checklist";
-import TrailerCard from "./course-trailer-and-checklist";
 import Description from "./description";
 import Title from "./title";
-import { FaPhoneFlip } from "react-icons/fa6";
+import CourseContact from "./course-trailer-and-checklist/course-contact";
 
 export default function TopBanner({
   courseData,
@@ -26,18 +24,7 @@ export default function TopBanner({
         </div>
         <div className="max-w-[450px]  absolute right-2 md:top-[50px] md:absolute">
           <CourseTrailerAndChecklist courseData={courseData} />
-          <div className="flex items-center justify-between my-3">
-            <p className="text-[#A3A3A3] text-sm">
-              কোর্সটি সম্পর্কে বিস্তারিত জানতে
-            </p>
-            <div className="flex items-center gap-1">
-              <FaPhone className="text-[#1CAB55] h-[14px] w-[14px] rotate-90" />
-
-              <p className="text-[#1CAB55] text-sm underline">
-                ফোন করুন (16910)
-              </p>
-            </div>
-          </div>
+          <CourseContact />
         </div>
       </div>
     </div>
