@@ -12,11 +12,10 @@ import CourseDetails from "../components/course-details";
 
 export default function IELTSCourse() {
   const { courseData, loading } = useIELTSCourse();
-  console.log("Course Data:", courseData?.data);
+
+  console.log("courseData", courseData);
 
   const [showFixedPanel, setShowFixedPanel] = useState(false);
-
-  console.log("Show Fixed Panel:", showFixedPanel);
 
   return (
     <div>

@@ -62,6 +62,7 @@ export default function TrailerVideoSlider({
       >
         <FaCircleChevronRight className="text-white text-2xl" />
       </button>
+
       {/* thumbnails */}
       <div className="flex justify-center gap-1 mt-2 overflow-x-auto no-scrollbar">
         {mediaList.map((item, idx) => (
@@ -73,7 +74,7 @@ export default function TrailerVideoSlider({
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           >
-            <div className="w-[55px] h-[30px] overflow-hidden">
+            <div className="w-[55px] h-[30px] overflow-hidden cursor-pointer">
               <Image
                 src={
                   item.resource_type === "video"

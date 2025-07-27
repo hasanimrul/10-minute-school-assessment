@@ -11,7 +11,6 @@ export default function CourseInstructor({
     (data) => data.type === "instructors"
   );
 
-  console.log("Instructors Data:", instructors);
   return (
     <div className="py-4">
       <h2 className="text-2xl text-[#111827] font-semibold pb-4">
