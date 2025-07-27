@@ -1,3 +1,4 @@
+"use client";
 import CTAButton from "@/components/cta-button";
 import Checklist from "./checklist";
 import { CourseData } from "@/modules/ielts-course/types/ielts-course-data-types";

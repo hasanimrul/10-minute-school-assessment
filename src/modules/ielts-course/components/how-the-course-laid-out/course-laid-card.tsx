@@ -1,3 +1,4 @@
+"use client";
 import { Feature, Section } from "../../types/ielts-course-data-types";
 
 // Type guard to check if a value is an Instructor

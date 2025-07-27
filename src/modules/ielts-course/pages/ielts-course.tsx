@@ -1,6 +1,4 @@
 "use client";
-import Description from "@/modules/ielts-course/components/top-banner/description";
-import Title from "@/modules/ielts-course/components/top-banner/title";
 import useIELTSCourse from "../hooks/use-ielts-course";
 import TopBanner from "../components/top-banner";
 import CourseInstructor from "../components/course-instructor";
@@ -18,6 +16,8 @@ export default function IELTSCourse() {
 
   const [showFixedPanel, setShowFixedPanel] = useState(false);
 
+  console.log("Show Fixed Panel:", showFixedPanel);
+
   return (
     <div>
       <TopBanner
@@ -32,8 +32,9 @@ export default function IELTSCourse() {
           <CourseDetails courseData={courseData?.data} />
           <CourseExclusiveFeature courseData={courseData?.data} />
         </div>
+
         {showFixedPanel && (
-          <div className="w-[400px] space-y-3 fixed bottom-10 right-40">
+          <div className="w-[400px] space-y-3 fixed bottom-1 right-40">
             <div className="bg-white p-1 border border-gray-300">
               <ChecklistAndCTA courseData={courseData?.data} />
             </div>

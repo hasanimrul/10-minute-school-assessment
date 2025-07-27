@@ -1,14 +1,38 @@
+"use client";
 import { CourseData } from "../../types/ielts-course-data-types";
 import CourseTrailerAndChecklist from "./course-trailer-and-checklist";
 import Description from "./description";
 import Title from "./title";
 import CourseContact from "./course-trailer-and-checklist/course-contact";
+import { useEffect, useRef, useState } from "react";
 
 export default function TopBanner({
   courseData,
+  onObserveChange,
 }: {
   courseData: CourseData | undefined;
+  onObserveChange?: (isVisible: boolean) => void;
 }) {
+  const observeRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!observeRef.current || !onObserveChange) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        onObserveChange(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(observeRef.current);
+
+    return () => observer.disconnect();
+  }, [observeRef.current, onObserveChange]);
+
   return (
     <div
       style={{
@@ -22,7 +46,10 @@ export default function TopBanner({
           <Title courseData={courseData} />
           <Description courseData={courseData} />
         </div>
-        <div className="max-w-[450px]  absolute right-2 md:top-[50px] md:absolute">
+        <div
+          ref={observeRef}
+          className="max-w-[450px]  absolute right-2 md:top-[50px] md:absolute"
+        >
           <CourseTrailerAndChecklist courseData={courseData} />
           <CourseContact />
         </div>

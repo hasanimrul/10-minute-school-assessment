@@ -1,3 +1,4 @@
+"use client";
 import { CourseData } from "../../types/ielts-course-data-types";
 
 export default function Title({

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Instructor, Section } from "../../types/ielts-course-data-types";
 import Link from "next/link";

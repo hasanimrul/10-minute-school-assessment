@@ -1,3 +1,4 @@
+"use client";
 import { CourseData } from "@/modules/ielts-course/types/ielts-course-data-types";
 import Image from "next/image";
 

@@ -1,3 +1,4 @@
+"use client";
 import { MdCheck } from "react-icons/md";
 import {
   CourseData,

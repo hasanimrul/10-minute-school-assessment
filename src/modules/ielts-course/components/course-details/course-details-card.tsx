@@ -1,6 +1,8 @@
+"use client";
 import { useState } from "react";
 import { About, Section } from "../../types/ielts-course-data-types";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { wrapListItems } from "../../utils/helpers/helper-functions";
 
 // Type guard for About section
 function isCourseDetails(value: any): value is About {
@@ -10,14 +12,6 @@ function isCourseDetails(value: any): value is About {
     "title" in value &&
     "description" in value
   );
-}
-
-// Wrap <li>s with <ul> for proper bullet rendering
-function wrapListItems(description: string): string {
-  if (description.includes("<li>")) {
-    return `<ul class="list-disc pl-5 space-y-1">${description}</ul>`;
-  }
-  return description;
 }
 
 export default function CourseDetailsCard({
