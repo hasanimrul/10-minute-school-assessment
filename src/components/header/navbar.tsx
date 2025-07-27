@@ -1,5 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
+import { CiSearch } from "react-icons/ci";
+import { FaPhone } from "react-icons/fa6";
 
 export default function Navbar() {
   const [currentLang, setCurrentLang] = useState(() => {
@@ -15,14 +18,52 @@ export default function Navbar() {
     localStorage.setItem("currentLang", nextLang);
     window.location.reload();
   };
+
+  const menuItemStyle = "cursor-pointer hover:text-[#1CAB55]";
+
   return (
     <div className="w-full mx-auto bg-white py-3  fixed top-0 left-0 right-0 z-999">
-      <div className="flex items-center justify-between w-[1440px] px-18 mx-auto">
-        <img
-          src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg"
-          alt="Logo"
-          className="h-7"
-        />
+      <div className="flex items-center justify-between gap-4 w-[1440px] px-18 mx-auto">
+        <Link href="#">
+          <img
+            src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg"
+            alt="Logo"
+            className="h-7"
+          />
+        </Link>
+
+        <div className="relative">
+          <svg
+            className="absolute top-2 left-3 "
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="24"
+            fill="none"
+            viewBox="0 0 27 24"
+          >
+            <path fill="#fff" d="M0 0H26.514V23.99H0z"></path>
+            <path
+              fill="#111827"
+              d="M21.247 20.065l-2.83-2.82a6.59 6.59 0 001.407-4.078 6.657 6.657 0 10-6.657 6.657 6.59 6.59 0 004.077-1.407l2.82 2.83a.834.834 0 001.365-.271.833.833 0 00-.182-.911zM8.174 13.167a4.993 4.993 0 119.985 0 4.993 4.993 0 01-9.985 0z"
+            ></path>
+            <path
+              fill="#F1844C"
+              d="M3.875.975l1.238 1.807c.33.481.853.794 1.433.857l2.178.236-1.807 1.239c-.481.33-.794.852-.857 1.432l-.237 2.178-1.238-1.807a1.998 1.998 0 00-1.432-.857L.974 5.824l1.808-1.239c.48-.33.794-.853.857-1.432L3.875.975zM8.59 19.77l-.337.54a1.998 1.998 0 00-.21 1.656l.19.607-.54-.337a1.998 1.998 0 00-1.655-.21l-.607.19.337-.54c.308-.494.385-1.099.21-1.655l-.19-.607.54.337c.494.308 1.099.385 1.655.21l.607-.19zM23.575 6.068l.223 1.396c.092.576.43 1.083.927 1.388l1.205.74-1.396.222a1.998 1.998 0 00-1.388.928l-.74 1.204-.222-1.396a1.997 1.997 0 00-.927-1.387l-1.205-.74 1.396-.223a1.997 1.997 0 001.388-.927l.74-1.205z"
+            ></path>
+          </svg>
+          <input
+            placeholder="স্কিলস কোর্স, কিংবা স্কুল প্রোগ্রাম সার্চ করুন..."
+            className={`h-10 w-[358px] rounded-full pl-12 border border-[#dbe1eb] text-sm`}
+          />
+        </div>
+        <ul className="flex items-center gap-4">
+          <li className={menuItemStyle}>Class 6-12</li>
+          <li className={menuItemStyle}>Skill</li>
+          <li className={menuItemStyle}>Admission</li>
+          <li className={menuItemStyle}>Online Batch</li>
+          <li className={menuItemStyle}>English Centre</li>
+          <li className={menuItemStyle}>More</li>
+        </ul>
 
         <button
           onClick={() => handleLanguageChange(currentLang)}
@@ -58,6 +99,15 @@ export default function Navbar() {
             </defs>
           </svg>
           {currentLang === "en" ? "বাং" : "En"}
+        </button>
+
+        <div className="flex items-center gap-1 cursor-pointer">
+          <FaPhone className="text-[#1CAB55] h-[14px] w-[14px]" />
+          <p className="text-[#1CAB55] text-sm">16910</p>
+        </div>
+
+        <button className="bg-[#1CAB55] py-1 px-6 text-white rounded-md cursor-pointer">
+          লগ-ইন
         </button>
       </div>
     </div>
