@@ -10,7 +10,7 @@ export default function HowTheCourseLaidOut({
     (data) => data.type === "features"
   );
   return (
-    <div className="mt-4 mb-2">
+    <div className="py-4">
       <h2 className="text-xl text-black font-semibold pb-4">
         {features?.name}
       </h2>

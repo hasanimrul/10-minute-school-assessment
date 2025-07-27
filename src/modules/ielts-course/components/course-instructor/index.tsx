@@ -12,7 +12,7 @@ export default function CourseInstructor({
 
   console.log("Instructors Data:", instructors);
   return (
-    <div className="my-4">
+    <div className="py-4">
       <h2 className="text-2xl text-[#111827] font-semibold pb-4">
         {instructors?.name}
       </h2>

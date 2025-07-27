@@ -17,7 +17,7 @@ export default function CourseLaidCard({
   features: Section | undefined;
 }) {
   return (
-    <div className="mb-16 grid grid-cols-1 gap-4 rounded-md  bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
+    <div className="grid grid-cols-1 gap-4 rounded-md  bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
       {features?.values?.map((feature, index) =>
         isFeature(feature) ? (
           <div key={index} className="flex items-start gap-4 rounded-md ">

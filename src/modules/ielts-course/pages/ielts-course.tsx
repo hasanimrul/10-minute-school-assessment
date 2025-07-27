@@ -9,27 +9,37 @@ import WhatYouWillLearnByDoingThisCourse from "../components/what-you-will-learn
 import CourseExclusiveFeature from "../components/course-exclusive-feature";
 import ChecklistAndCTA from "../components/top-banner/course-trailer-and-checklist/checklist-and-cta";
 import CourseContact from "../components/top-banner/course-trailer-and-checklist/course-contact";
+import { useState } from "react";
+import CourseDetails from "../components/course-details";
 
 export default function IELTSCourse() {
   const { courseData, loading } = useIELTSCourse();
   console.log("Course Data:", courseData?.data);
 
+  const [showFixedPanel, setShowFixedPanel] = useState(false);
+
   return (
     <div>
-      <TopBanner courseData={courseData?.data} />
+      <TopBanner
+        courseData={courseData?.data}
+        onObserveChange={(isVisible) => setShowFixedPanel(!isVisible)}
+      />
       <div className="max-w-[1200px] mx-auto px-4 flex gap-12">
         <div className="w-[700px] space-y-4">
           <CourseInstructor courseData={courseData?.data} />
           <HowTheCourseLaidOut courseData={courseData?.data} />
           <WhatYouWillLearnByDoingThisCourse courseData={courseData?.data} />
+          <CourseDetails courseData={courseData?.data} />
           <CourseExclusiveFeature courseData={courseData?.data} />
         </div>
-        <div className="w-[400px] space-y-3  fixed bottom-10 right-40">
-          <div className="bg-white p-1 border border-gray-300">
-            <ChecklistAndCTA courseData={courseData?.data} />
+        {showFixedPanel && (
+          <div className="w-[400px] space-y-3 fixed bottom-10 right-40">
+            <div className="bg-white p-1 border border-gray-300">
+              <ChecklistAndCTA courseData={courseData?.data} />
+            </div>
+            <CourseContact />
           </div>
-          <CourseContact />
-        </div>
+        )}
       </div>
     </div>
   );

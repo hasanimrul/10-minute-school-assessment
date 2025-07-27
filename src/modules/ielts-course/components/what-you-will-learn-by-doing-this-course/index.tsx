@@ -18,7 +18,7 @@ export default function WhatYouWillLearnByDoingThisCourse({
   );
 
   return (
-    <div className="mt-4 mb-2">
+    <div className="py-4">
       <h2 className="text-xl text-black font-semibold pb-4">
         {pointers?.name}
       </h2>

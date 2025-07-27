@@ -25,8 +25,8 @@ export default function CourseExclusiveFeature({
     (data) => data.type === "feature_explanations"
   );
   return (
-    <div className="my-4">
-      <h2 className="text-2xl text-[#111827] font-semibold pb-4">
+    <div className="py-4">
+      <h2 className="text-xl text-[#111827] font-semibold pb-4">
         {courseFeatures?.name}
       </h2>
       <div className="border border-[#dbe1eb] rounded-md p-6 space-y-4">
