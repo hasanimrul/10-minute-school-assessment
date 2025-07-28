@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { CiSearch } from "react-icons/ci";
 import { FaPhone } from "react-icons/fa6";
 
 export default function Navbar() {
@@ -16,13 +15,16 @@ export default function Navbar() {
     const nextLang = prev === "en" ? "bn" : "en";
     setCurrentLang(nextLang);
     localStorage.setItem("currentLang", nextLang);
+    document.cookie = `currentLang=${nextLang}; path=/; max-age=${
+      60 * 60 * 24 * 7
+    }`;
     window.location.reload();
   };
 
   const menuItemStyle = "cursor-pointer hover:text-[#1CAB55]";
 
   return (
-    <div className="w-full mx-auto bg-white py-3  fixed top-0 left-0 right-0 z-999">
+    <div className="w-full mx-auto bg-white py-3  fixed top-0 left-0 right-0 z-999 border-b ">
       <div className="flex items-center justify-between gap-4 w-[1440px] px-18 mx-auto">
         <Link href="#">
           <img
